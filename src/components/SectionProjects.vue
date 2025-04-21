@@ -24,14 +24,14 @@
 
     <!-- Affichage des projets filtrés -->
     <div class="row flex-grow-1 flex-wrap justify-content-center" id="projects-list">
-      <div v-for="project in paginatedProjects" > 
-        :key="project.name"                <!-- Utilisation du nom du projet comme clé unique -->
+      <div v-for="project in paginatedProjects"  
+        :key="project.name"                
         class="justify-content-center col-12 col-lg-2 mb-4"
       >
         <div class="card text-center">
           <div class="card-body">
             <h4 class="card-title">{{project.name}}</h4>   <!-- Nom du projet -->
-            <img :src="project.icon" :alt="project.name" class="project-icon mb-3 mx-auto" />  <!-- Icône du projet -->
+            <img :src="project.icon" :alt="getFaviconURL('http://Soratix.fr')" class="project-icon mb-3 mx-auto" />  <!-- Icône du projet -->
             <p class="card-text">{{project.description}}</p>  <!-- Description du projet -->
             <div class="d-flex justify-content-center mb-3">
               <!-- Lien vers la version live du projet, si disponible -->
@@ -112,11 +112,12 @@
     // D'autres projets peuvent être ajoutés ici...
   ]
 
-  // Fonction pour générer l'URL de la favicon d'un site
-  function getFaviconURL(siteURL) {
-    const baseFaviconURL = "https://www.google.com/s2/favicons?sz=64&domain_url=";
-    return baseFaviconURL + encodeURIComponent(siteURL);
-  }
+// Fonction pour générer l'URL de la favicon d'un site
+function getFaviconURL(siteURL) {
+  // Chemin relatif vers la favicon dans le dossier public
+  return `https://www.google.com/s2/favicons?domain=${siteURL}`;
+}
+
 
   // Computed pour filtrer les projets en fonction de la technologie sélectionnée
   const filteredProjects = computed(() =>
