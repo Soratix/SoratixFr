@@ -31,4 +31,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          remote-dir: /public_html/  # Modifie si ton site est dans un sous-dossier
+          server-dir: /public_html/  # Modifie si ton site est dans un sous-dossier
