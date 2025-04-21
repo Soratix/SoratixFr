@@ -3,7 +3,7 @@ name: Deploy to O2Switch
 on:
   push:
     branches:
-      - master  # Déclenche l'action uniquement lors des push sur la branche master
+      - Master  # Déclenche l'action uniquement lors des push sur la branche master
 
 jobs:
   deploy:
