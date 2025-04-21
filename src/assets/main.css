@@ -1,0 +1,280 @@
+/* ===========================
+   STRUCTURE GLOBALE DE LA PAGE
+=========================== */
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #14102A;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  padding-bottom: 50px;
+}
+
+/* ===========================
+   SECTION ACCUEIL ANIMÉE
+=========================== */
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #14102A;
+}
+
+.hero-section .content {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+}
+
+/* ===========================
+   PARTICULES DYNAMIQUES
+=========================== */
+
+.particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(89, 19, 110, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards, fadeOut 15s forwards;
+  will-change: transform;
+}
+
+/* Effet d'apparition (fade-in) */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Effet de disparition (fade-out) */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ===========================
+   ANIMATION TRANSITION
+=========================== */
+
+/* Transition pour le fade-in et fade-out */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ===========================
+   SECTION PROJECTS
+=========================== */
+
+#projects-list{
+  margin-top: 20px;
+}
+
+#projects {
+  flex: 1 0 auto; /* Permet à la section de grandir sans pousser le footer */
+}
+
+/* Empêche la pagination de sortir de l'écran */
+#pagination {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+#pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Pagination responsive */
+#pagination .btn {
+  min-width: 40px;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Empêche les cards de déborder */
+.card {
+  height: 100%;
+}
+
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Responsive card sizing */
+@media (min-width: 992px) {
+  .col-lg-2 {
+    flex: 0 0 auto;
+    width: 16.666667%; /* 6 colonnes = 100% / 6 = 16.66% */
+  }
+}
+
+/* Style des icônes technos */
+.tech-icon-wrapper {
+  cursor: pointer;
+  text-align: center;
+  opacity: 0.6;
+  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease, border 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+}
+/* Effet au survol, mais uniquement si non active */
+.tech-icon-wrapper:hover:not(.active) {
+opacity: 0.9;
+transform: scale(1.05);
+filter: brightness(1.2);
+background-color: rgba(255, 255, 255, 0.05); /* léger fond au survol */
+border: 1px solid rgba(0, 255, 195, 0.3); /* bordure légère */
+}
+
+/* Si active : glow + bordure accentuée */
+.tech-icon-wrapper.active {
+opacity: 1;
+transform: scale(1.1);
+border: 1px solid #00ffc3;
+box-shadow: 0 0 8px rgba(0, 255, 195, 0.4);
+background-color: rgba(0, 255, 195, 0.05);
+}
+
+.tech-icon {
+width: 100%;
+height: 3rem;
+object-fit: inherit;
+filter: brightness(0) invert(1); /* Inverser les couleurs pour le noir et blanc */
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #EBD6F8, #6A0DAD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card {
+  background-color: #0a081173;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: #6A0DAD 0px 0px 10px 0px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #EBD6F8, #6A0DAD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.project-icon {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  opacity: 0.6;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 500;
+  border: 1px solid transparent;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.custom-button:hover:not(.disabled) {
+  opacity: 0.9;
+  transform: scale(1.05);
+  filter: brightness(1.2);
+  border: 1px solid rgba(0, 255, 195, 0.3);
+}
+
+.custom-button.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.custom-button.active {
+  opacity: 1;
+  transform: scale(1.1);
+  border: 1px solid #00ffc3;
+  box-shadow: 0 0 8px rgba(0, 255, 195, 0.4);
+  background-color: rgba(0, 255, 195, 0.05);
+}
+
+.custom-button.live {
+  color: #00ffc3;
+}
+
+.custom-button.code {
+  color: #ffffff;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0A0715;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Ombre douce en haut */
+}
