@@ -16,7 +16,7 @@ jobs:
       - name: Set up pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7  # Remplace par la version de pnpm que tu utilises
+          version: 10.8.1  # Remplace par la version de pnpm que tu utilises
 
       - name: Install dependencies
         run: pnpm install  # Installe toutes les dépendances avec pnpm
