@@ -1,9 +1,9 @@
-name: Deploy to O2Switch
+name: Deploy to OVH
 
 on:
   push:
     branches:
-      - Master  # Déclenche l'action uniquement lors des push sur la branche master
+      - Master
 
 jobs:
   deploy:
@@ -11,24 +11,24 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Cette action récupère ton code source
+        uses: actions/checkout@v3
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 10.8.1  # Remplace par la version de pnpm que tu utilises
+          version: 10.8.1
 
       - name: Install dependencies
-        run: pnpm install  # Installe toutes les dépendances avec pnpm
+        run: pnpm install
 
       - name: Build the project
-        run: pnpm run build  # Crée le build de production
+        run: pnpm run build
 
-      - name: Deploy to O2Switch via FTP
+      - name: Deploy to OVH via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /public_html/  # Modifie si ton site est dans un sous-dossier
+          server-dir: /www/

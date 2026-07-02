@@ -1,0 +1,47 @@
+{
+  "categories": [
+    { "key": "web", "label": "Internet", "icon": "web" },
+    { "key": "android", "label": "Android", "icon": "android" }
+  ],
+  "tools": [
+    {
+      "id": "soratix-hub",
+      "name": "Soratix.fr",
+      "description": "Le hub créatif principal — votre espace de création",
+      "subdomain": "",
+      "url": "https://soratix.fr",
+      "category": "web",
+      "technologies": ["vue", "vite", "typescript"],
+      "status": "live",
+      "public": true,
+      "iconDomain": "soratix.fr",
+      "repoUrl": "https://github.com/Soratix/SoratixFr"
+    },
+    {
+      "id": "cardtracker",
+      "name": "CardTracker",
+      "description": "Un outil de gestion de cartes à collectionner",
+      "subdomain": "cardtracker",
+      "url": "https://cardtracker.soratix.fr",
+      "category": "web",
+      "technologies": ["vue"],
+      "status": "live",
+      "public": true,
+      "iconDomain": "cardtracker.soratix.fr",
+      "repoUrl": ""
+    },
+    {
+      "id": "mobile-tba",
+      "name": "TBA",
+      "description": "Un projet mobile à venir…",
+      "subdomain": "",
+      "url": "",
+      "category": "android",
+      "technologies": ["kotlin"],
+      "status": "planned",
+      "public": true,
+      "iconDomain": "soratix.fr",
+      "repoUrl": ""
+    }
+  ]
+}

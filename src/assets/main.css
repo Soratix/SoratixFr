@@ -12,8 +12,12 @@ html, body, #app {
   font-family: 'Inter', sans-serif;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
-  padding-bottom: 50px;
+  padding-bottom: 0;
 }
 
 /* ===========================
@@ -23,7 +27,7 @@ body {
 .hero-section {
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -106,7 +110,28 @@ body {
 }
 
 /* ===========================
-   SECTION PROJECTS
+ SECTION CREATIONS
+=========================== */
+
+#creations-list {
+  margin-top: 20px;
+}
+
+#creations-list .card {
+  height: auto;
+}
+
+#creations-list .card .card-body {
+  height: auto;
+  justify-content: flex-start;
+}
+
+#creations {
+  flex: 1 0 auto;
+}
+
+/* ===========================
+ SECTION PROJECTS (legacy)
 =========================== */
 
 #projects-list{

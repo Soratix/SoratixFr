@@ -28,3 +28,6 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Discord OAuth (secrets serveur)
+public/api/discord/config.php

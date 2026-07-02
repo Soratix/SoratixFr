@@ -16,10 +16,10 @@
   
   const select = (section) => emit('change', section)
   
-  const sections = {
-    home: 'Accueil',
-    projects: 'Projets',
-  }
+ const sections = {
+   home: 'Accueil',
+   creations: 'Créations',
+ }
   </script>
   
   <style scoped>
