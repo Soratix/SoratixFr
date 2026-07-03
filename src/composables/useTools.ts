@@ -1,5 +1,6 @@
 import { ref, readonly } from 'vue'
 import type { Category, CategoryDraft, Tool, ToolsData, ToolDraft } from '@/types/tool'
+import { getFaviconURL } from '@/utils/siteIcon'
 
 const STORAGE_KEY = 'soratix-hub-data'
 const BASE_DOMAIN = 'soratix.fr'
@@ -43,9 +44,7 @@ export function buildToolUrl(subdomain: string): string {
   return `https://${subdomain.trim()}.${BASE_DOMAIN}`
 }
 
-export function getFaviconURL(domain: string): string {
-  return `https://www.google.com/s2/favicons?domain=${domain}`
-}
+export { getFaviconURL }
 
 function readLocalOverride(): ToolsData | null {
   try {

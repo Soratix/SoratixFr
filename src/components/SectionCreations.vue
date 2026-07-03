@@ -33,11 +33,7 @@
         <div class="card text-center creation-card">
           <div class="card-body">
             <h4 class="card-title">{{ item.name }}</h4>
-            <img
-              :src="getFaviconURL(item.iconDomain)"
-              :alt="item.name"
-              class="project-icon mb-3 mx-auto"
-            />
+            <SiteIcon :domain="item.iconDomain" :alt="item.name" class="mb-3 mx-auto" />
             <p class="card-text">{{ item.description }}</p>
 
             <div class="mb-2">
@@ -110,8 +106,8 @@ import {
   loadHubData,
   getPublicTools,
   getCategories,
-  getFaviconURL,
 } from '@/composables/useTools'
+import SiteIcon from '@/components/SiteIcon.vue'
 import { resolveCategoryIcon } from '@/utils/categoryIcons'
 import type { Category, Tool, ToolStatus } from '@/types/tool'
 

@@ -242,7 +242,8 @@ filter: brightness(0) invert(1); /* Inverser les couleurs pour le noir et blanc 
 .project-icon {
   width: 3rem;
   height: 3rem;
-  object-fit: cover;
+  object-fit: contain;
+  image-rendering: auto;
 }
 
 .custom-button {
